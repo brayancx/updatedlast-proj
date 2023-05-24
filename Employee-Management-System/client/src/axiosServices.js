@@ -30,3 +30,13 @@ export const axiosPut = (url, data) =>{
         }
     })
 }
+
+
+
+export const axiosPost2 = (url, data) =>{
+    return axios.post(`${baseURL}${url}`, data, {
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+}

@@ -9,6 +9,7 @@ const updateEmployee = require('./routes/updateEmployee')
 const deleteEmployee = require('./routes/deleteEmployee')
 const getEmployeeById = require('./routes/getEmployeeById')
 const searchEmployee = require('./routes/searchEmployee')
+const userRoutes = require('./routes/createUser')
 const cors = require("cors");
 
 app.use(cors());
@@ -27,7 +28,7 @@ db.once("open", function () {
 });
 
 
-
+app.use('/api/users', userRoutes)
 app.use('/employee', getEmployees)
 app.use('/employee', createEmployee)
 app.use('/employee', updateEmployee)
